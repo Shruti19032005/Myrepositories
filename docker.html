@@ -1,0 +1,107 @@
+#!/bin/bash
+
+# Pull an image from Docker Hub
+docker pull [image-name]:[tag]
+# Example: docker pull ubuntu:latest
+
+# List all available images on your machine
+docker images
+
+# Build an image from a Dockerfile
+docker build -t [image-name]:[tag] .
+# Example: docker build -t my-app:1.0 .
+
+# Tag an image for pushing to a repository
+docker tag [image-id] [repository]:[tag]
+# Example: docker tag 7a86f8ffcb25 my-app:1.0
+
+# Push an image to Docker Hub or another registry
+docker push [repository]:[tag]
+# Example: docker push my-app:1.0
+
+# Remove a specific image
+docker rmi [image-name]:[tag]
+# Example: docker rmi ubuntu:latest
+
+# Remove all unused images
+docker image prune -a
+
+# Run a container from an image
+docker run -d --name [container-name] [image-name]:[tag]
+# Example: docker run -d --name my-container ubuntu:latest
+
+# Run a container interactively (for terminal access)
+docker run -it --name [container-name] [image-name]:[tag] /bin/bash
+# Example: docker run -it --name my-container ubuntu:latest /bin/bash
+
+# Stop a running container
+docker stop [container-name]
+
+# Start a stopped container
+docker start [container-name]
+
+# Restart a container
+docker restart [container-name]
+
+# List all running containers
+docker ps
+
+# List all containers (including stopped)
+docker ps -a
+
+# View logs from a container
+docker logs [container-name]
+# Example: docker logs my-container
+
+# Remove a specific container
+docker rm [container-name]
+
+# Remove all stopped containers
+docker container prune
+
+# Execute a command in a running container
+docker exec -it [container-name] [command]
+# Example: docker exec -it my-container /bin/bash
+
+# Copy files from a container to your host
+docker cp [container-name]:[path-inside-container] [path-on-host]
+# Example: docker cp my-container:/var/log/myapp.log /home/user/logs/
+
+# Save an image to a tar file
+docker save -o [path-to-file].tar [image-name]:[tag]
+# Example: docker save -o ubuntu_latest.tar ubuntu:latest
+
+# Load an image from a tar file
+docker load -i [path-to-file].tar
+# Example: docker load -i ubuntu_latest.tar
+
+# Run Docker Compose (for multi-container applications)
+docker-compose up -d
+
+# Stop Docker Compose services
+docker-compose down
+
+# List Docker volumes
+docker volume ls
+
+# Remove a specific volume
+docker volume rm [volume-name]
+
+# Remove all unused volumes
+docker volume prune
+docker pull docker/whalesay
+docker run docker/whalesay cowsay "Hello World"
+ ____________
+< Hello World >
+ ------------
+     \
+      \
+        \
+                      ##        .
+                ## ## ##       ==
+             ## ## ## ##      ===
+         /""""""""""""""""___/ ===
+    ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~
+         \______ o          __/
+          \    \        __/
+            \____\______/
