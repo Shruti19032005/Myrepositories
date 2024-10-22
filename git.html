@@ -1,0 +1,50 @@
+sudo apt update
+sudo apt install git
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+git config --list
+cd /path/to/your/project
+git init
+git add filename           # To add a specific file
+git add .                  # To add all files in the directory
+git commit -m "Commit message describing changes"
+git status
+git clone https://github.com/username/repository.git
+git remote add origin https://github.com/username/repository.git
+git push -u origin main    # For the first time, set upstream to main branch
+git push                   # For subsequent pushes
+git pull origin main
+git add index.html
+git add .
+git commit -m "Initial commit - added homepage structure"
+git pull origin main
+git push origin main
+git checkout -b feature-branch
+Switch back to the main branch:
+
+bash
+Copy code
+git checkout main
+Merge the feature-branch into main:
+
+bash
+Copy code
+git merge feature-branch
+Optionally, delete the feature-branch:
+
+bash
+Copy code
+git branch -d feature-branch
+ Rebase a Branch
+Rebasing allows you to apply your changes on top of the latest changes in another branch.
+
+First, switch to your feature branch:
+
+bash
+Copy code
+git checkout feature-branch
+Rebase it onto main:
+
+bash
+Copy code
+git rebase main
